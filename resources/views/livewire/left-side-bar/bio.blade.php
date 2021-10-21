@@ -19,8 +19,8 @@
 
                 <div class="form-group">
                     <select id="gender" wire:model.defer="gender" class="custom-select  border-right-0 border-left-0 rounded-0 @error('age') is-invalid @enderror" name="gender">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
                     </select>
                     @error('gender') <span class="text-red-500 text-danger pl-2">{{ $message }}</span> @enderror
                 </div>

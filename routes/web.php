@@ -10,7 +10,11 @@ Route::get('/welcome', function () {
     return view('index');
 });
 
-Route::get("/CV_Builder", LefSideBar::class)->name("leftSideBar");
+Auth::routes();
+Route::middleware(['auth'])->group(function () {
+
+    Route::get("/CV_Builder", LefSideBar::class)->name("leftSideBar");
+});
 
 // Image::make(Input::file('photo'))->resize(300, 200)->save('foo.jpg')
 
@@ -20,7 +24,6 @@ Route::get("/CV_Builder", LefSideBar::class)->name("leftSideBar");
 
 
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
