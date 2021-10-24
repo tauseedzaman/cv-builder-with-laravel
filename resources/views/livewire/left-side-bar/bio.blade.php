@@ -13,16 +13,13 @@
                 </div>
 
                 <div class="form-group">
-                    <input id="Age" class="form-control border-right-0 border-left-0 rounded-0 @error('age') is-invalid @enderror " wire:model.defer="age" type="number" name="age" placeholder="Enter Your Age">
-                    @error('age') <span class="text-red-500 text-danger pl-2">{{ $message }}</span> @enderror
+                    <input id="Phone" class="form-control border-right-0 border-left-0 rounded-0 @error('phone') is-invalid @enderror " wire:model.defer="phone" type="text" name="phone" placeholder="Enter Your Phone Number">
+                    @error('phone') <span class="text-red-500 text-danger pl-2">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="form-group">
-                    <select id="gender" wire:model.defer="gender" class="custom-select  border-right-0 border-left-0 rounded-0 @error('age') is-invalid @enderror" name="gender">
-                        <option value="1">Male</option>
-                        <option value="0">Female</option>
-                    </select>
-                    @error('gender') <span class="text-red-500 text-danger pl-2">{{ $message }}</span> @enderror
+                    <input id="Age" class="form-control border-right-0 border-left-0 rounded-0 @error('age') is-invalid @enderror " wire:model.defer="age" type="number" name="age" placeholder="Enter Your Age">
+                    @error('age') <span class="text-red-500 text-danger pl-2">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="form-group">

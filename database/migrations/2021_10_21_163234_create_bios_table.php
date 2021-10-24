@@ -17,8 +17,8 @@ class CreateBiosTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("email");
+            $table->string("phone");
             $table->bigInteger('age')->nullable()->default(12);
-            $table->boolean('gender');
             $table->string("address");
             $table->foreignId('user_id')->onDelete('cascade');
             $table->softDeletes();

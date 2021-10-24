@@ -10,7 +10,7 @@ class Bio extends Component
     public $age;
     public $email;
     public $address;
-    public $gender;
+    public $phone;
 
     public function save_bio()
     {
@@ -19,7 +19,7 @@ class Bio extends Component
             'email' => 'required|email',
             'age' => 'required|numeric',
             'address' => 'required',
-            'gender' => 'required|bool', //if 1 then male other wise female ;)
+            'phone' => 'required',
         ));
 
         bioModel::create([
@@ -27,11 +27,9 @@ class Bio extends Component
             'email' => $this->email,
             'age' => $this->age,
             'address' => $this->address,
-            'gender' => $this->gender,
+            'phone' => $this->phone,
             'user_id' => auth()->id()
         ]);
-        dd("its don bro");
-
     }
 
 
