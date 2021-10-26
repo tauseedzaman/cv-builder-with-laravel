@@ -112,7 +112,6 @@
        </div>
     </div>
 
-
        <div class="row ">
         <div class="col-4 rounded-lg border-1">
             <br>
@@ -129,19 +128,9 @@
           <br>
           <div class="bg-white " style="border-radius: 20px;">
        <p class="text-warning pt-2 pl-2"><b>project</b></p>
-             <!-- projects info -->
-             <p class="px-2  "> 🔰 Password-generator’s,GPA calculator, Hospital management system, Auto-Facebook Posting, Number-writer, laravel-blog, Be math master, javascript repeater, Automate-input fields etc....   </p>
-          <small class="pl-2" >🔰 Hospital Management System
-          <a class="pl-2"  href="https://github.com/tauseedzaman/hospitalMS/">https://github.com/tauseedzaman/hospitalMS/</a></small>
-
-            <p class="pl-2" >🔰 Password Generator
-          <a class="pl-2" href="https://github.com/tauseedzaman/password/">https://github.com/tauseedzaman/hospitalMS/</a></p>
-
-            <p class="pl-2" >🔰 JavaScript Repeator
-             <br>
-          <a class="pl-2"  href="https://github.com/tauseedzaman/repeater-in-javascript/">https://github.com/tauseedzaman/Repeater-in-javascript/</a></p>
-
-
+             @foreach ($projects as $project)
+                 <small class="pl-2" >🔰 {{ $project }} </small><br />
+             @endforeach
 
           </div>
 

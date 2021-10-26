@@ -42,6 +42,14 @@
         @livewire('left-side-bar.photo')
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProjects"
+            aria-expanded="true" aria-controls="collapseProjects">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>{{ __("Add Projects") }}</span>
+        </a>
+        @livewire('left-side-bar.projects')
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
