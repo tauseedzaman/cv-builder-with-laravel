@@ -8,7 +8,7 @@
           <div class=" mt-3 bg-danger mx-auto" style="width: 90%;border-radius: 20px;">
              <center>
                 <img class="cv_img rounded-circle" width="150px" style="margin-top:-80px;height: 150px
-                   " src="{{ asset("images/me.jpg") }}" alt="">
+                   " src=" @if($photo) {{ $photo->temporaryUrl() }} @else {{ asset("images/me.jpg") }} @endif" alt="">
              </center>
              <h4 class="text-bolder text-black pt-2 text-center pb-5"><b>{{ $bio ? $bio->name : "Tauseed Zaman" }}</b></h4>
           </div>
@@ -32,13 +32,6 @@
           <div class=" pl-4">
              <p class=" "><b>WhatsApp:</b></p>
              <p><i><a href="https://wa.me/{{ $bio ? $bio->phone : "+923429382554" }}">https://wa.me/{{ $bio ? $bio->phone : "+923429382554" }}</a></i></p>
-          </div>
-          <!--  Whatsapp  -->
-          <div class=" pl-4">
-             <p class=" "><b>Facebook</b></p>
-             <p><i><a href="https://web.facebook.com/t
-owseed.zaman/">https://web.facebook.com/t
-owseed.zaman/</a></i></p>
           </div>
         <!--  age  -->
         <div class=" pl-4">
@@ -94,7 +87,7 @@ owseed.zaman/</a></i></p>
           <div class="bg-white " style="border-radius: 20px;">
              <div class=" pl-4 ">
                 <p class="text-warning pt-2"><b>Career Summary</b></p>
-             </div>
+             </d    iv>
              <br>
              <!-- Technical Support -->
              <h5 class="pl-2"><span class="">👉</span> <b>Technical Support Engineer(Resigned)</b><br></h5>
@@ -117,23 +110,29 @@ owseed.zaman/</a></i></p>
 
        </div>
        </div>
+    </div>
 
 
        <div class="row ">
-       <div class="col-4 bg-light">
-
+        <div class="col-4 rounded-lg border-1">
+            <br>
+            <div class="bg-white " style="border-radius: 20px;">
+            <p class="text-warning pt-2 pl-2"><b>Social Links</b></p>
+                @foreach ($profiles as $profile)
+                <p class="pl-2 "><b>{{ $profile->profile_name }}</b><br />
+                <small class="pl-2"><i><a href="{{ $profile->profile_link }}"  >{{ $profile->profile_link }}</a></i></small>
+            </p>
+                @endforeach
+            </div>
        </div>
        <div class="col-4 rounded-lg border-1">
           <br>
           <div class="bg-white " style="border-radius: 20px;">
        <p class="text-warning pt-2 pl-2"><b>project</b></p>
-              <h5 class="pl-2"><span class="">👉</span> <b>github</b><br></h5>
-             <p class="pl-3"> <b> <i><a href="https://github.com/tauseedzaman/">https://github.com/tauseedzaman/</a></i></b></p>
-             <br>
              <!-- projects info -->
              <p class="px-2  "> 🔰 Password-generator’s,GPA calculator, Hospital management system, Auto-Facebook Posting, Number-writer, laravel-blog, Be math master, javascript repeater, Automate-input fields etc....   </p>
-          <p class="pl-2" >🔰 Hospital Management System
-          <a class="pl-2"  href="https://github.com/tauseedzaman/hospitalMS/">https://github.com/tauseedzaman/hospitalMS/</a></p>
+          <small class="pl-2" >🔰 Hospital Management System
+          <a class="pl-2"  href="https://github.com/tauseedzaman/hospitalMS/">https://github.com/tauseedzaman/hospitalMS/</a></small>
 
             <p class="pl-2" >🔰 Password Generator
           <a class="pl-2" href="https://github.com/tauseedzaman/password/">https://github.com/tauseedzaman/hospitalMS/</a></p>
