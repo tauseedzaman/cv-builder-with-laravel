@@ -128,9 +128,9 @@
           <br>
           <div class="bg-white " style="border-radius: 20px;">
        <p class="text-warning pt-2 pl-2"><b>project</b></p>
-             @foreach ($projects as $project)
-                 <small class="pl-2" >🔰 {{ $project }} </small><br />
-             @endforeach
+             {{-- @foreach ($projects as $project) --}}
+                 {{-- <small class="pl-2" >🔰 {{ $project }} </small><br /> --}}
+             {{-- @endforeach --}}
 
           </div>
 
