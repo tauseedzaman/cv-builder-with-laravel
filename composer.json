@@ -14,7 +14,8 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
-        "livewire/livewire": "^2.7"
+        "livewire/livewire": "^2.7",
+        "spatie/browsershot": "^3.52"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

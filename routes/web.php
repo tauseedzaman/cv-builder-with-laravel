@@ -14,9 +14,12 @@ Route::get('/', function () {
 Route::get('/create_pdf',function ()
 {
 
-    $pdf = App::make('dompdf.wrapper');
-    $pdf->loadHTML('<h1>Test</h1>');
-    return $pdf->stream();
+    view()->share(["age","name","email","phone","address","bio","photo","profiles","projects","OtherSkills","codingLanguages","frameWorkSystems","MarkupLanguages","socialLinks","technical_supports","software_engineering","webDevTime","Education"],[$this->age,$this->name,$this->email,$this->phone,$this->address,$this->bio,$this->photo,$this->profiles,$this->projects,$this->OtherSkills,$this->codingLanguages,$this->frameWorkSystems,$this->MarkupLanguages,$this->socialLinks,$this->technical_supports,$this->software_engineering,$this->webDevTime,$this->Education]);
+
+    $pdf = PDF::loadView('pdf_view',["age" => $this->age,"name" => $this->name,"email" => $this->email,"phone" => $this->phone,"address" => $this->address,"bio" => $this->bio,"photo" => $this->photo,"profiles" => $this->profiles,"projects" => $this->projects,"OtherSkills" => $this->OtherSkills,"codingLanguages" => $this->codingLanguages,"frameWorkSystems" => $this->frameWorkSystems,"MarkupLanguages" => $this->MarkupLanguages,"socialLinks" => $this->socialLinks,"technical_supports" => $this->technical_supports,"software_engineering" => $this->software_engineering,"webDevTime" => $this->webDevTime,"Education" => $this->Education]);
+
+    // download PDF file with download method
+    return $pdf->download('cv.pdf');
 
     // $pdf = PDF::loadView('pdf.invoice', "hi");
     // return $pdf->download('invoice.pdf');

@@ -92,9 +92,42 @@ class BuildCV extends Component
         unset($this->socialLinks_profile_link);
     }
 
+    public function save_pdddf() {
+        // retreive all records from db
+        // $data = Employee::all();
+        // share data to view
+        view()->share(["age","name","email","phone","address","bio","photo","profiles","projects","OtherSkills","codingLanguages","frameWorkSystems","MarkupLanguages","socialLinks","technical_supports","software_engineering","webDevTime","Education"],[$this->age,$this->name,$this->email,$this->phone,$this->address,$this->bio,$this->photo,$this->profiles,$this->projects,$this->OtherSkills,$this->codingLanguages,$this->frameWorkSystems,$this->MarkupLanguages,$this->socialLinks,$this->technical_supports,$this->software_engineering,$this->webDevTime,$this->Education]);
+
+        $pdf = PDF::loadView('pdf_view',["age" => $this->age,"name" => $this->name,"email" => $this->email,"phone" => $this->phone,"address" => $this->address,"bio" => $this->bio,"photo" => $this->photo,"profiles" => $this->profiles,"projects" => $this->projects,"OtherSkills" => $this->OtherSkills,"codingLanguages" => $this->codingLanguages,"frameWorkSystems" => $this->frameWorkSystems,"MarkupLanguages" => $this->MarkupLanguages,"socialLinks" => $this->socialLinks,"technical_supports" => $this->technical_supports,"software_engineering" => $this->software_engineering,"webDevTime" => $this->webDevTime,"Education" => $this->Education]);
+
+        // download PDF file with download method
+        return $pdf->download('cv.pdf');
+      }
+
     public function save_pdf()
     {
-        dd('s');
+
+        // $pdf = PDF::loadView('myPDF', "data");
+
+        // return $pdf->download('itsolutionstuff.pdf');
+
+
+
+        return response()->streamDownload(function () {
+            $pdf = App::make('dompdf.wrapper');
+            $pdf->loadHTML('<h1>Test</h1>');
+            echo $pdf->stream();
+        }, 'cv.pdf');
+
+
+	// $pdf = $this->exportAsPdf($this->getCurrentUrl());
+
+	// $headers = [
+	// 	'Content-type' => 'application/pdf',
+	// 	'Content-Disposition' => 'attachment',
+	// ];
+
+	// return response()->streamDownload(fn() => print($pdf), 'export.pdf', $headers);
     }
 
     public function save_project()
