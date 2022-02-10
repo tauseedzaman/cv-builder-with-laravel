@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class BuildCV extends Component
 {
@@ -88,6 +90,11 @@ class BuildCV extends Component
 
         unset($this->socialLinks_profile_name);
         unset($this->socialLinks_profile_link);
+    }
+
+    public function save_pdf()
+    {
+        dd('s');
     }
 
     public function save_project()
